@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:drawable="clr-namespace:MauiDemo.Common"
+             x:Class="MauiDemo.Views.RadialBar">
+    <ContentPage.Resources>
+        <drawable:RadialGraphic x:Key="drawable" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center">
+                <Label
+                    Text="Custom graphics"
+                    FontSize="24"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Heading" />
+                <GraphicsView
+                    Drawable="{StaticResource drawable}"
+                    HorizontalOptions="Center"
+                    HeightRequest="195"
+                    WidthRequest="195" />
+                <Label
+                    FontAutoScalingEnabled="True"
+                    LineBreakMode="WordWrap"
+                    Text="
+                    namespace MauiDemo.Common;
+
+                    public class RadialGraphic : IDrawable
+                    {
+                    public void Draw( ICanvas canvas, RectF dirtyRect)
+                    {
+                    // Arc setup ( both)
+                    canvas.StrokeSize= 45;
+                    canvas.BlendMode= BlendMode.Overlay;
+
+                    // Background Arc
+                    canvas.StrokeColor= Colors.Gray;
+                    canvas.DrawArc(45, 45, 100, 100, 230, -55, true, false);
+
+                    // Progress/ top Arc
+                    canvas.StrokeColor= Colors.DarkOrange;
+                    canvas.DrawArc(45, 45, 100, 100, 230, 0, true, false);
+                    }
+                    }"
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Source code" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDemo.Views.TestPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout>
+                <Label
+                    Text="Check out some of Maui's built-in animations!"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center" />
+
+                <Image
+                    x:Name="SwirlImage"
+                    Source="hypervortex.png"
+                    SemanticProperties.Description="Trippy vortex graphic"
+                    Margin="20"
+                    HeightRequest="400"
+                    HorizontalOptions="Center" />
+                
+                <Label
+                    x:Name="GraphicLabel"
+                    Text="Test"
+                    SemanticProperties.HeadingLevel="Level3"
+                    FontSize="20"
+                    HorizontalOptions="Center" />
+
+                    
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
